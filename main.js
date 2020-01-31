@@ -58,10 +58,10 @@ const isLegal = (startStack, endStack) => {
     }
   }
 
-const checkForWin = (stacks) => {
+const checkForWin = () => {
     // check if there's a win – i.e. when stack b or c has 4 rings
 
-    if (stacks.b.length == 4 || stacks.c.length == 4) 
+    if (stacks.b.length === 4 || stacks.c.length === 4) 
     {
       console.log("************* You've won! *************");
       return true;
@@ -83,7 +83,7 @@ const towersOfHanoi = (startStack, endStack) => {
   {
     console.log("Illegal move or entry.");
   }
-  checkForWin(stacks);
+  checkForWin();
 
 }
 
@@ -129,9 +129,17 @@ if (typeof describe === 'function') {
   });
   describe('#checkForWin()', () => {
     it('should detect a win', () => {
-      stacks = { a: [], b: [4, 3, 2, 1], c: [] };
+      stacks = {
+        a: [],
+        b: [4, 3, 2, 1],
+        c: []
+      };;
       assert.equal(checkForWin(), true);
-      stacks = { a: [1], b: [4, 3, 2], c: [] };
+      stacks = {
+        a: [4, 3, 2],
+        b: [1],
+        c: []
+      };
       assert.equal(checkForWin(), false);
     });
   });
