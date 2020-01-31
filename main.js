@@ -1,3 +1,5 @@
+// SEE README for code plan - /README.md
+
 'use strict';
 
 const assert = require('assert');
